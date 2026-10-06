@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support – Trittwerk</title>
+  <meta name="description" content="Support und Kontakt für die Trittwerk App.">
+  <meta name="theme-color" content="#070a0c">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070a0c;
+      --surface: #101519;
+      --line: rgba(255,255,255,.10);
+      --text: #f5f7f8;
+      --muted: #9ca8af;
+      --orange: #ff8a2a;
+      --cyan: #28d7e5;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(255,138,42,.12), transparent 28rem),
+        radial-gradient(circle at 12% 28%, rgba(40,215,229,.08), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    nav { border-bottom: 1px solid var(--line); background: rgba(7,10,12,.74); backdrop-filter: blur(18px); }
+    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.03em; font-size: 1.2rem; }
+    .brand img { width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 0 26px rgba(255,138,42,.26); }
+    .nav-link { color: var(--muted); font-weight: 700; }
+    .nav-link:hover { color: var(--text); }
+    main { padding: 88px 0 104px; }
+    .eyebrow { color: var(--orange); font-size: .78rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 18px 0 18px; font-size: clamp(3.2rem, 8vw, 5.4rem); line-height: .96; letter-spacing: -.065em; }
+    .intro { color: var(--muted); font-size: 1.15rem; max-width: 720px; margin: 0 0 48px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { padding: 30px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)); }
+    .card.wide { grid-column: 1 / -1; }
+    h2 { margin: 0 0 10px; font-size: 1.45rem; letter-spacing: -.02em; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 22px; margin-bottom: 0; }
+    .mail {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
+      padding: 0 22px; border-radius: 999px; background: var(--orange); color: #170904;
+      font-weight: 850; margin-top: 12px;
+    }
+    footer { padding: 42px 0; color: var(--muted); border-top: 1px solid var(--line); }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 20px; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Trittwerk Startseite"><img src="assets/app-icon.png" alt="" width="38" height="38"> Trittwerk</a>
+      <a class="nav-link" href="privacy.html">Datenschutz</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+      <div class="eyebrow">Trittwerk App</div>
+      <h1>Support</h1>
+      <p class="intro">Du hast eine Frage, möchtest einen Fehler melden oder brauchst Hilfe mit Apple Watch, Sensoren oder Trainingsdaten? Schreib uns direkt.</p>
+
+      <div class="grid">
+        <section class="card wide">
+          <h2>Kontakt</h2>
+          <p>Am schnellsten erreichst du den Trittwerk-Support per E-Mail.</p>
+          <a class="mail" href="mailto:support@trittwerk.app">support@trittwerk.app</a>
+        </section>
+
+        <section class="card">
+          <h2>Hilfreiche Angaben</h2>
+          <p>Damit wir schneller helfen können, schicke nach Möglichkeit diese Informationen mit:</p>
+          <ul>
+            <li>iPhone-Modell und iOS-Version</li>
+            <li>Apple-Watch-Modell und watchOS-Version</li>
+            <li>Verwendeter Trainer, Bike oder Herzfrequenzsensor</li>
+            <li>Kurze Beschreibung, was passiert ist</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Typische Themen</h2>
+          <p>Wir helfen unter anderem bei Verbindung, Sensorwerten, Apple Health, Apple Watch, Fahrthistorie und allgemeinen Fragen zur App.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>© 2026 Trittwerk</div>
+      <div class="footer-links">
+        <a href="index.html">Start</a>
+        <a href="privacy.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
