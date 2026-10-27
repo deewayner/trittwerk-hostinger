@@ -138,6 +138,25 @@
     .privacy-card { padding: 36px; border-radius: 30px; min-height: 250px; background: var(--surface); border: 1px solid var(--line); }
     .privacy-card strong { display: block; color: var(--lime); font-size: 3rem; letter-spacing: -.06em; }
     .privacy-card p { color: var(--muted); }
+    .beta { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; align-items: start; }
+    .beta-panel { padding: 34px; border-radius: 30px; background: var(--surface); border: 1px solid var(--line); }
+    .beta-panel p { color: var(--muted); }
+    .beta-list { display: grid; gap: 13px; margin-top: 26px; }
+    .beta-list div { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; color: var(--muted); }
+    .beta-list span { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,138,42,.12); color: var(--lime); font-weight: 850; }
+    .beta-form { display: grid; gap: 14px; padding: 28px; border-radius: 30px; background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.018)); border: 1px solid var(--line); }
+    .field { display: grid; gap: 7px; }
+    .field label { color: var(--muted); font-size: .86rem; font-weight: 760; }
+    .field input, .field select, .field textarea {
+      width: 100%; min-height: 48px; border: 1px solid var(--line); border-radius: 16px;
+      background: rgba(255,255,255,.055); color: var(--text); padding: 12px 14px; font: inherit;
+    }
+    .field textarea { min-height: 96px; resize: vertical; }
+    .field select option { background: #101519; color: var(--text); }
+    .form-note { color: var(--muted); font-size: .84rem; margin: 0; }
+    .form-status { min-height: 22px; color: var(--muted); font-size: .9rem; margin: 0; }
+    .form-status.success { color: #58f28b; }
+    .form-status.error { color: #ff6b86; }
     .cta { padding: 90px 28px; border-radius: 40px; text-align: center; background: linear-gradient(145deg, rgba(255,138,42,.16), rgba(40,215,229,.08)); border: 1px solid rgba(255,138,42,.24); }
     .cta h2 { max-width: 800px; margin-inline: auto; }
     .cta p { color: var(--muted); max-width: 620px; margin: 0 auto 28px; }
@@ -155,6 +174,7 @@
       .feature-grid { grid-template-columns: 1fr; }
       .ride-story { grid-template-columns: 1fr; }
       .privacy { grid-template-columns: 1fr; }
+      .beta { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .wrap { width: min(calc(100% - 28px), var(--max)); }
@@ -179,7 +199,7 @@
         <a href="#features">Funktionen</a>
         <a href="#training">Training</a>
         <a href="#devices">Geräte</a>
-        <a class="button button-primary" href="#start">App vormerken</a>
+        <a class="button button-primary" href="#beta">Beta testen</a>
       </div>
     </div>
   </nav>
@@ -191,10 +211,10 @@
         <h1>Dein Ride.<br><span class="accent">Dein Trittwerk.</span></h1>
         <p>Trainiere fokussiert, verbinde deine Sensoren und verstehe jede Fahrt. Trittwerk bringt Leistung, Pulszonen und Fortschritt in eine klare Live-Ansicht.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#start">Mehr erfahren</a>
+          <a class="button button-primary" href="#beta">Beta testen</a>
           <a class="button button-secondary" href="#training">Training entdecken</a>
         </div>
-        <div class="availability">Für iPhone und Apple Watch · Entwicklung läuft</div>
+        <div class="availability">Für iPhone, iPad und Apple Watch · TestFlight-Beta läuft</div>
       </div>
       <div class="device-stage" aria-label="Vorschau der Trittwerk Trainingsansicht">
         <div class="glow"></div>
@@ -271,9 +291,35 @@
         <div class="cta reveal">
           <div class="eyebrow">Trittwerk entsteht gerade</div>
           <h2>Bereit für eine bessere Indoor-Fahrt?</h2>
-          <p>Die App befindet sich in aktiver Entwicklung. Bald gibt es hier weitere Einblicke und den direkten Weg zur App.</p>
-          <span class="button button-primary" aria-label="App-Store-Link folgt">App Store folgt</span>
+          <p>Die App befindet sich in aktiver Entwicklung. Wenn du Indoor Cycling mit iPhone, iPad, Apple Watch oder Smart Trainer testen möchtest, melde dich für die Beta an.</p>
+          <a class="button button-primary" href="#beta">Beta-Link erhalten</a>
         </div>
+      </div>
+    </section>
+
+    <section id="beta">
+      <div class="wrap beta">
+        <div class="beta-panel reveal">
+          <div class="eyebrow">TestFlight Beta</div>
+          <h2>Teste Trittwerk auf deinem Setup.</h2>
+          <p>Gib deine E-Mail-Adresse ein und erhalte den TestFlight-Link automatisch per E-Mail. Besonders spannend sind Rückmeldungen zu iPad Cockpit, Apple Watch, Brustgurt und FTMS-Trainern.</p>
+          <div class="beta-list">
+            <div><span>1</span><p>Du gibst deine E-Mail-Adresse ein.</p></div>
+            <div><span>2</span><p>Du erhältst automatisch eine E-Mail mit dem TestFlight-Link.</p></div>
+            <div><span>3</span><p>Du testest echte Fahrten und gibst Feedback.</p></div>
+          </div>
+        </div>
+
+        <form class="beta-form reveal" id="beta-form">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="180" required placeholder="du@example.com">
+          </div>
+          <button class="button button-primary" type="submit">Beta-Link erhalten</button>
+          <p class="form-status" id="beta-form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">Du erhältst eine E-Mail mit dem TestFlight-Link. Der Betreiber wird über deine Anfrage informiert. Kein Newsletter. <a href="privacy.html">Datenschutz</a></p>
+        </form>
       </div>
     </section>
   </main>
@@ -299,6 +345,40 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+    const betaForm = document.querySelector('#beta-form');
+    const betaFormStatus = document.querySelector('#beta-form-status');
+    betaForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const submitButton = betaForm.querySelector('button[type="submit"]');
+      const data = new FormData(betaForm);
+
+      betaFormStatus.textContent = 'Beta-Link wird angefordert ...';
+      betaFormStatus.className = 'form-status';
+      submitButton.disabled = true;
+
+      fetch('beta-request.php', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(async (response) => {
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || 'Die Anfrage konnte nicht gesendet werden.');
+          }
+          betaForm.reset();
+          betaFormStatus.textContent = 'Die E-Mail mit deinem Beta-Link wurde zum Versand übergeben. Bitte prüfe auch deinen Spam-Ordner.';
+          betaFormStatus.className = 'form-status success';
+        })
+        .catch((error) => {
+          betaFormStatus.textContent = `${error.message} Schreib sonst direkt an support@trittwerk.eu.`;
+          betaFormStatus.className = 'form-status error';
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+        });
+    });
   </script>
 </body>
 </html>
